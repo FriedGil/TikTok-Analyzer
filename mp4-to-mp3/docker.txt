@@ -1,0 +1,5 @@
+docker run --gpus all -it -p 8888:8888  --user root -e NB_GID=100 -e GEN_CERT=yes -e GRANT_SUDO=yes cschranz/gpu-jupyter
+
+sudo apt update && sudo apt install ffmpeg
+
+pip install git+https://github.com/openai/whisper.git 
