@@ -1,2 +1,4 @@
 import urllib.request
-urllib.request.urlretrieve("https://v16m-webapp.tiktokcdn-us.com/643f8a41f163e3770d2bc586cec81858/633a84b4/video/tos/useast5/tos-useast5-pve-0068-tx/87576b5765a74c7191c2e1be91b647e3/?a=1988&ch=0&cr=0&dr=0&lr=tiktok_m&cd=0%7C0%7C1%7C0&cv=1&br=3726&bt=1863&cs=0&ds=3&ft=ebtHKH-qMyq8ZMCQDhe2NM~yfl7Gb&mime_type=video_mp4&qs=0&rc=ZDg5O2c0PGY3Zmc2NWgzN0BpM2t5dGk6ZndzZjMzZzczNEAwYDYzYjRgXi0xYS00Xl42YSNhYy1scjRfZXBgLS1kMS9zcw%3D%3D&l=2022100300422191F4FFCC25EA4F05352A", 'video1.mp4') 
+
+def video_download(url):
+    urllib.request.urlretrieve(url, '1.mp3') 
