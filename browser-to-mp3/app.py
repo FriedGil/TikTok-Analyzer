@@ -14,18 +14,18 @@ driver = webdriver.Remote(
 driver.get("https://www.tiktok.com/foryou")
 
 html = driver.find_element(By.TAG_NAME, "html")
+_ = WebDriverWait(driver, 5).until(
+    EC.presence_of_element_located((By.XPATH, "//video[1]"))
+)
 
 try:
     for i in range(5):
         html.send_keys(Keys.DOWN)
-        driver.implicitly_wait(1)
-        wait = WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.XPATH, "//video[1]")))
+        _ = WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.XPATH, "//video[1]")))
         elem = driver.find_element(By.XPATH, "//video[1]")
         src = elem.get_attribute("src")
-        length = elem.duration
-        driver.implictly_wait(length)
-        video_download(elem)
-        print(elem)
+        video_download(src)
+        print(src)
 except Exception as e:
     print(e)
 finally:
