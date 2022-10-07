@@ -14,9 +14,7 @@ driver = webdriver.Remote(
 driver.get("https://www.tiktok.com/foryou")
 
 html = driver.find_element(By.TAG_NAME, "html")
-_ = WebDriverWait(driver, 5).until(
-    EC.presence_of_element_located((By.XPATH, "//video[1]"))
-)
+_ = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, "//video[1]")))
 
 try:
     for i in range(5):
