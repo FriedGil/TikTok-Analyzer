@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  browser-to-mp3-service:
+    build: browser-to-mp3
+    volumes:
+      - browser-to-mp3:/app
+    ports:
+      - 5001:7900
+  mp3-to-txt-service:
