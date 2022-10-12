@@ -7,7 +7,7 @@ class Globals:
 def video_download(url,target_folder_name):
     try:
         urllib.request.urlretrieve(url, f"{target_folder_name}/{Globals.num}.mp3")
-        Num.num += 1
+        Globals.num += 1
     except Exception as e:
         if e == urllib.error.HTTPError:
             print("Blob")
