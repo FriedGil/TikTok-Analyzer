@@ -14,7 +14,7 @@ driver = webdriver.Remote(
     command_executor="http://localhost:4444/wd/hub", options=options
 )
 
-tag = "politics"
+tag = "vaccine"
 #replace tag with whatever
 driver.get(f"https://www.tiktok.com/tag/{tag}?lang=en")
 
@@ -28,16 +28,13 @@ try:
 except:
         driver.quit()
 
-
-#Make a folder named audio for output
-target_quantity = 10
+target_quantity = 150
 try:
     for i in range(target_quantity):
         _ = WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.XPATH, "//video[1]"))) # Wait for video to load
         elem = driver.find_element(By.XPATH, "//video[1]")
-        elem.click()
         src = elem.get_attribute("src")
-        video_download(src,"audio")
+        video_download(src,f"audio-{tag}")
         print(src)
         html.send_keys(Keys.DOWN)
         time.sleep(2) # Very arbitrary but it works at stopping duplicates. 
